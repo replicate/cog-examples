@@ -6,3 +6,4 @@ inst-colorization/checkpoints/coco_finetuned_mask_256_ffs/latest_net_G.pth filte
 inst-colorization/checkpoints/coco_finetuned_mask_256_ffs/latest_net_GComp.pth filter=lfs diff=lfs merge=lfs -text
 inst-colorization/checkpoints/coco_finetuned_mask_256_ffs/latest_net_GF.pth filter=lfs diff=lfs merge=lfs -text
 rife/train_log filter=lfs diff=lfs merge=lfs -text
+rife/train_log/flownet.pkl filter=lfs diff=lfs merge=lfs -text
