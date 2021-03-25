@@ -1,0 +1,12 @@
+*.pyc
+*.py~
+*.py#
+
+output/*
+*.mp4
+
+test/
+.idea/
+*.npz
+
+*.zip

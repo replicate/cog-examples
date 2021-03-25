@@ -1,0 +1,11 @@
+model: infer.py:Model
+examples:
+  - input:
+      text: "foo"
+    output: "hello foo"
+  - input:
+      text: "bar"
+    output: "hello bar"
+environment:
+  architectures:
+    - cpu

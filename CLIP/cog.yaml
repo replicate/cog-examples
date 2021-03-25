@@ -1,0 +1,14 @@
+name: "clip"
+model: "model.py:CLIP"
+environment:
+  python_version: "3.8"
+  python_packages:
+    - ftfy==5.9
+    - numpy==1.20.1
+    - Pillow==8.1.2
+    - regex==2021.3.17
+    - torch==1.7.1
+    - torchvision==0.8.2
+    - tqdm==4.59.0
+    - typing-extensions==3.7.4.3
+    - wcwidth==0.2.5
