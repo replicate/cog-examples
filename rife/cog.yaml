@@ -15,5 +15,5 @@ environment:
   system_packages:
     - ffmpeg
   architectures:
-#    - gpu
+    - gpu
     - cpu
