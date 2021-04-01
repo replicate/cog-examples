@@ -1,5 +1,14 @@
 name: "clip"
 model: "model.py:CLIP"
+examples:
+  - input:
+      image: "@examples/hot-dog.jpg"
+      labels: hot-dog,not-hot-dog
+    output: '{"hot-dog":0.6534651517868042,"not-hot-dog":0.3465348184108734}'
+  - input:
+      image: "@examples/cat.jpg"
+      labels: hot-dog,not-hot-dog
+    output: '{"hot-dog":0.40774697065353394,"not-hot-dog":0.5922530293464661}'
 environment:
   python_version: "3.8"
   python_packages:
