@@ -1,4 +1,7 @@
 model: infer.py:Model
+examples:
+  - input:
+      input: "@example/8b01a894fb91025a1dc77611838e9d13.jpg"
 environment:
   architectures:
     - cpu
