@@ -9,8 +9,6 @@ examples:
 environment:
   architectures:
     - gpu
-  cuda: 10.0
-  cudnn: 7
   system_packages:
     - libgl1-mesa-glx
     - libglib2.0-0
