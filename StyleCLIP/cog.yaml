@@ -17,6 +17,7 @@ environment:
   python_version: 3.7
   python_packages:
     - torch==1.7.1
+    - tensorflow==1.15.0
     - torchvision==0.8.2
     - torchaudio==0.7.2
     - ftfy==5.9
@@ -27,11 +28,7 @@ environment:
     - opencv-python==4.3.0.38
     - "git+git://github.com/openai/CLIP.git@8a665a683d791ed3491fedadcb3c91878f9eb78d"
   workdir: global
-  pre_install:
-    - "pip install tensorflow==1.15.0"
   post_install:
-    - "echo -----------"
-    - "find / -name libcudnn.so.7"
-    - "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu && python GetCode.py --dataset_name ffhq --code_type 'w' 2>&1 | grep -v '\\.\\.\\.'"
-    - "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu && python GetCode.py --dataset_name ffhq --code_type 's' 2>&1 | grep -v '\\.\\.\\.'"
-    - "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu && python GetCode.py --dataset_name ffhq --code_type 's_mean_std' 2>&1 | grep -v '\\.\\.\\.'"
+    - "python GetCode.py --dataset_name ffhq --code_type 'w' 2>&1 | grep -v '\\.\\.\\.'"
+    - "python GetCode.py --dataset_name ffhq --code_type 's' 2>&1 | grep -v '\\.\\.\\.'"
+    - "python GetCode.py --dataset_name ffhq --code_type 's_mean_std' 2>&1 | grep -v '\\.\\.\\.'"
