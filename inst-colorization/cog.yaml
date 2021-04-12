@@ -1,4 +1,4 @@
-model: infer.py:Model
+model: "infer.py:Model"
 examples:
   - input:
       input: "@example/8b01a894fb91025a1dc77611838e9d13.jpg"
@@ -6,7 +6,7 @@ environment:
   architectures:
     - cpu
     - gpu
-  python_version: 3.8
+  python_version: "3.8"
   python_packages:
     - cachetools==4.1.0
     - chardet==3.0.4
