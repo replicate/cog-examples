@@ -98,7 +98,7 @@ class Colorizer:
 
     def colorize(self, input: Path):
         output_dir = tempfile.mkdtemp()
-        output_path = Path(os.path.join(output_dir, str(input).split(".")[0] + ".png"))
+        color_output_path = Path(os.path.join(output_dir, str(input).split(".")[0] + ".png"))
 
         try:
             input_dir = self.opt.test_img_dir
@@ -106,18 +106,7 @@ class Colorizer:
             shutil.copy(str(input), input_path)
             image_list = [f for f in listdir(input_dir) if isfile(join(input_dir, f))]
 
-            # Get bounding boxes
-
-            for image_path in image_list:
-                img = cv2.imread(join(input_dir, image_path))
-                lab_image = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
-                l_channel, a_channel, b_channel = cv2.split(lab_image)
-                l_stack = np.stack([l_channel, l_channel, l_channel], axis=2)
-                outputs = self.predictor(l_stack)
-                save_path = join(self.output_npz_dir, image_path.split('.')[0])
-                pred_bbox = outputs["instances"].pred_boxes.to(torch.device('cpu')).tensor.numpy()
-                pred_scores = outputs["instances"].scores.cpu().data.numpy()
-                np.savez(save_path, bbox = pred_bbox, scores = pred_scores)
+            self.get_bounding_boxes(input_dir, image_list)
 
             dataset = Fusion_Testing_Dataset(self.opt)
             dataset_loader = torch.utils.data.DataLoader(dataset, batch_size=1, num_workers=0)
@@ -125,34 +114,34 @@ class Colorizer:
             count_empty = 0
 
             # Colorize
+            with torch.no_grad():
+                output_paths = []
+                input_paths = []
+                for data_raw in dataset_loader:
+                    # if os.path.isfile(join(save_img_dir, data_raw['file_id'][0] + '.png')) is True:
+                    #     continue
+                    data_raw['full_img'][0] = data_raw['full_img'][0].to(self.device)
+                    if data_raw['empty_box'][0] == 0:
+                        data_raw['cropped_img'][0] = data_raw['cropped_img'][0].to(self.device)
+                        box_info = data_raw['box_info'][0]
+                        box_info_2x = data_raw['box_info_2x'][0]
+                        box_info_4x = data_raw['box_info_4x'][0]
+                        box_info_8x = data_raw['box_info_8x'][0]
+                        cropped_data = util.get_colorization_data(data_raw['cropped_img'], self.opt, ab_thresh=0, p=self.opt.sample_p)
+                        full_img_data = util.get_colorization_data(data_raw['full_img'], self.opt, ab_thresh=0, p=self.opt.sample_p)
+                        self.model.set_input(cropped_data)
+                        self.model.set_fusion_input(full_img_data, [box_info, box_info_2x, box_info_4x, box_info_8x])
+                        self.model.forward()
+                    else:
+                        count_empty += 1
+                        full_img_data = util.get_colorization_data(data_raw['full_img'], self.opt, ab_thresh=0, p=self.opt.sample_p)
+                        self.model.set_forward_without_box(full_img_data)
+                    output_path = join(self.save_img_dir, data_raw['file_id'][0] + '.png')
+                    self.model.save_current_imgs(output_path, is_cuda=self.has_gpu)
+                    output_paths.append(output_path)
 
-            output_paths = []
-            input_paths = []
-            for data_raw in dataset_loader:
-                # if os.path.isfile(join(save_img_dir, data_raw['file_id'][0] + '.png')) is True:
-                #     continue
-                data_raw['full_img'][0] = data_raw['full_img'][0].to(self.device)
-                if data_raw['empty_box'][0] == 0:
-                    data_raw['cropped_img'][0] = data_raw['cropped_img'][0].to(self.device)
-                    box_info = data_raw['box_info'][0]
-                    box_info_2x = data_raw['box_info_2x'][0]
-                    box_info_4x = data_raw['box_info_4x'][0]
-                    box_info_8x = data_raw['box_info_8x'][0]
-                    cropped_data = util.get_colorization_data(data_raw['cropped_img'], self.opt, ab_thresh=0, p=self.opt.sample_p)
-                    full_img_data = util.get_colorization_data(data_raw['full_img'], self.opt, ab_thresh=0, p=self.opt.sample_p)
-                    self.model.set_input(cropped_data)
-                    self.model.set_fusion_input(full_img_data, [box_info, box_info_2x, box_info_4x, box_info_8x])
-                    self.model.forward()
-                else:
-                    count_empty += 1
-                    full_img_data = util.get_colorization_data(data_raw['full_img'], self.opt, ab_thresh=0, p=self.opt.sample_p)
-                    self.model.set_forward_without_box(full_img_data)
-                output_path = join(self.save_img_dir, data_raw['file_id'][0] + '.png')
-                self.model.save_current_imgs(output_path, is_cuda=self.has_gpu)
-                output_paths.append(output_path)
-
-                input_path = glob(input_dir + "/" + data_raw["file_id"][0] + ".*")[0]
-                input_paths.append(input_path)
+                    input_path = glob(input_dir + "/" + data_raw["file_id"][0] + ".*")[0]
+                    input_paths.append(input_path)
 
             # Resize
 
@@ -169,10 +158,23 @@ class Colorizer:
                 output_hls[:, :, 1] = input_hls[:, :, 1]
                 output_bgr = cv2.cvtColor(output_hls, cv2.COLOR_HLS2BGR)
 
-                cv2.imwrite(str(output_path), output_bgr, [cv2.IMWRITE_PNG_COMPRESSION, 0])
-
+                cv2.imwrite(str(color_output_path), output_bgr, [cv2.IMWRITE_PNG_COMPRESSION, 0])
         finally:
             self.cleanup()
+
+        return color_output_path
+
+    def get_bounding_boxes(self, input_dir, image_list):
+        for image_path in image_list:
+            img = cv2.imread(join(input_dir, image_path))
+            lab_image = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+            l_channel, a_channel, b_channel = cv2.split(lab_image)
+            l_stack = np.stack([l_channel, l_channel, l_channel], axis=2)
+            outputs = self.predictor(l_stack)
+            save_path = join(self.output_npz_dir, image_path.split('.')[0])
+            pred_bbox = outputs["instances"].pred_boxes.to(torch.device('cpu')).tensor.numpy()
+            pred_scores = outputs["instances"].scores.cpu().data.numpy()
+            np.savez(save_path, bbox = pred_bbox, scores = pred_scores)
 
     def cleanup(self):
         clean_folder(self.opt.test_img_dir)
