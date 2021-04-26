@@ -25,8 +25,8 @@ environment:
     - matplotlib==3.4.1
     - opencv-python==4.3.0.38
     - "git+git://github.com/openai/CLIP.git@8a665a683d791ed3491fedadcb3c91878f9eb78d"
-  workdir: global
   post_install:
     - "python GetCode.py --dataset_name ffhq --code_type 'w' 2>&1 | grep -v '\\.\\.\\.'"
     - "python GetCode.py --dataset_name ffhq --code_type 's' 2>&1 | grep -v '\\.\\.\\.'"
     - "python GetCode.py --dataset_name ffhq --code_type 's_mean_std' 2>&1 | grep -v '\\.\\.\\.'"
+workdir: global

@@ -11,3 +11,5 @@ environment:
 examples:
   - input:
       input: "@example/8b01a894fb91025a1dc77611838e9d13.jpg"
+  - input:
+      input: "@example/574100c6e31a1dcd096476eb2d632b3c.jpg"
