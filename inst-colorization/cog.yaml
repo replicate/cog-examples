@@ -2,7 +2,6 @@ model: "model.py:InstColorizationModel"
 environment:
   architectures:
     - cpu
-    - gpu
   python_version: "3.8"
   python_requirements: requirements.txt
   system_packages:
