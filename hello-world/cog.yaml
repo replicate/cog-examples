@@ -1,4 +1,4 @@
-model: infer.py:Model
+model: cog_predict.py:Model
 examples:
   - input:
       text: "foo"
