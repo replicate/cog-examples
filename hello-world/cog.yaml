@@ -1,11 +1,3 @@
-model: cog_predict.py:Model
-examples:
-  - input:
-      text: "foo"
-    output: "hello foo"
-  - input:
-      text: "bar"
-    output: "hello bar"
-environment:
-  architectures:
-    - cpu
+build:
+  python_version: "3.8"
+predict: "predict.py:Predictor"

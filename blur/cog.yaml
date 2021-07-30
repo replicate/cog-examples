@@ -1,18 +1,8 @@
-model: cog_predict.py:Model
-examples:
-  - input:
-      image: "@examples/lena.png"
-      blur: 0
-    output: "@examples/lena.png"
-  - input:
-      image: "@examples/lena.png"
-      blur: 2.0
-    output: "@examples/lena-blur.png"
-environment:
+build:
+  python_version: "3.8"
   python_packages:
-    - pillow==8.2.0
+    - "pillow==8.2.0"
   system_packages:
-    - libpng-dev
-    - libjpeg-dev
-  architectures:
-    - cpu
+    - "libpng-dev"
+    - "libjpeg-dev"
+predict: "predict.py:Predictor"
