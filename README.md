@@ -7,4 +7,4 @@ The models in this repo are small and contrived. Here are a few real-world examp
 * https://github.com/andreasjansson/sota-music-tagging-models
 * https://github.com/andreasjansson/StyleCLIP
 * https://github.com/andreasjansson/InstColorization
-* https://github.com/andreasjansson/SRResCGAN
+* https://github.com/andreasjansson/SRResCGAN/tree/cog-config
