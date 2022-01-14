@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
+}
