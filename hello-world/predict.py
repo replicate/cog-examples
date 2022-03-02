@@ -1,9 +1,9 @@
-import cog
+from cog import BasePredictor, Input
 
-class Predictor(cog.Predictor):
+
+class Predictor(BasePredictor):
     def setup(self):
         self.prefix = "hello"
 
-    @cog.input("input", type=str, help="Text that will get prefixed by 'hello '")
-    def predict(self, input):
-        return f"\n\n{self.prefix} {input}\n\n"
+    def predict(self, text: str = Input(description="Text to prefix with 'hello '")) -> str:
+        return self.prefix + " " + text

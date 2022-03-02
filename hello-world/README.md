@@ -1,12 +1,12 @@
-# Blur
+# Hello World
 
-This model applies box blur to an input image.
+This simple model takes a string as input and returns a string as output.
 
 ## Usage
 
 First, make sure you've got the [latest version of Cog](https://github.com/replicate/cog#install) installed.
 
-Build the image:
+Build the container image:
 
 ```sh
 cog build
@@ -15,7 +15,7 @@ cog build
 Now you can run predictions on the model:
 
 ```sh
-cog predict -i image=@examples/lena.png -i blur=4
+cog predict -i text=Athena
 
-cog predict -i image=@examples/lena.png -i blur=6
+cog predict -i text=Zeus
 ```
