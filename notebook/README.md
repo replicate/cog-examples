@@ -12,7 +12,7 @@ Build the image:
 cog build
 ```
 
-Run the Jupyter notebook server with Cog:
+Run the Jupyter Notebook server with Cog:
 
 ```sh
 cog run -p 8888 --debug jupyter notebook --allow-root --ip=0.0.0.0
