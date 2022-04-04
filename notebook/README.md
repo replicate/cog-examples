@@ -1,6 +1,6 @@
 # notebook
 
-A simple example using a Jupyter notbook with Cog
+A simple example using a Jupyter Notebook with Cog
 
 ## Usage
 
