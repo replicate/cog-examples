@@ -27,7 +27,7 @@ http://127.0.0.1:8888/?token=eedb5f511a60b179d1a1b2c6395f0f20c02a08124bae6896
 Save any changes you make to your notebook, then export it as a Python script:
 
 ```sh
-jupyter nbconvert --to script notebook.ipynb # creates notebook.py
+jupyter nbconvert --to script my_notebook.ipynb # creates my_notebook.py
 ```
 
 Now you can run predictions on the model:
