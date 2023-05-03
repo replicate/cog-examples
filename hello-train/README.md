@@ -1,21 +1,18 @@
 # Hello World
 
-This simple model takes a string as input and returns a string as output.
+This simple trainable model takes a string as input and returns a string as output.
 
-## Usage
+## Usage on replicate training api
 
-First, make sure you've got the [latest version of Cog](https://github.com/replicate/cog#install) installed.
+Kick off a training using the training api
 
-Build the container image:
+    training = replicate.trainings.create(
+      version="username/trainer_name:version_id",
+      input={
+        "prefix": "hola"
+      },
+      destination="username/trained_name"
+    )
 
-```sh
-cog build
-```
+Then you cna use your trained model at https://replicate.com/username/trained_name
 
-Now you can run predictions on the model:
-
-```sh
-cog predict -i text=Athena
-
-cog predict -i text=Zeus
-```
