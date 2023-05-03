@@ -15,7 +15,7 @@ cog build
 Now you can run predictions on the model:
 
 ```sh
-cog predict -i image=@examples/lena.png -i blur=4
+cog predict -i image=@examples/kodim24.png -i blur=4
 
-cog predict -i image=@examples/lena.png -i blur=6
+cog predict -i image=@examples/kodim24.png -i blur=6
 ```
