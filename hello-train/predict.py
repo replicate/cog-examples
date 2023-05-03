@@ -1,3 +1,4 @@
+import requests
 from cog import BasePredictor, Input, Path
 
 from typing import Optional
@@ -6,7 +7,7 @@ from typing import Optional
 class Predictor(BasePredictor):
     def setup(self, weights: Optional[Path] = None):
         if weights:
-            self.prefix = open(weights).read()
+            self.prefix = requests.get(weights).text
         else:
             self.prefix = "hello"
 
