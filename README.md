@@ -10,16 +10,17 @@ Once you've got a working model and want to publish it so others can see it in a
 - [hello-world](hello-world)
 - [notebook](notebook)
 - [resnet](resnet)
+- [hello-train](hello-train)
 
 ## Real world examples
 
 The models in this repo are small and contrived. Here are a few real-world examples:
 
-* https://github.com/andreasjansson/pretrained-gan-70s-scifi
-* https://github.com/minzwon/sota-music-tagging-models
-* https://github.com/orpatashnik/StyleCLIP
-* https://github.com/andreasjansson/InstColorization ([PR](https://github.com/ericsujw/InstColorization/pull/36))
-* https://github.com/andreasjansson/SRResCGAN/tree/cog-config
+- https://github.com/andreasjansson/pretrained-gan-70s-scifi
+- https://github.com/minzwon/sota-music-tagging-models
+- https://github.com/orpatashnik/StyleCLIP
+- https://github.com/andreasjansson/InstColorization ([PR](https://github.com/ericsujw/InstColorization/pull/36))
+- https://github.com/andreasjansson/SRResCGAN/tree/cog-config
 
 ## Support
 
