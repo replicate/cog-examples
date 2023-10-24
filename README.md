@@ -7,6 +7,7 @@ Once you've got a working model and want to publish it so others can see it in a
 ## Examples in this repo
 
 - [blur](blur)
+- [canary](canary)
 - [hello-world](hello-world)
 - [notebook](notebook)
 - [resnet](resnet)
