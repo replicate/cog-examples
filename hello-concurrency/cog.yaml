@@ -1,0 +1,12 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+build:
+  gpu: false
+  python_version: "3.12"
+  python_packages:
+    - "opentelemetry-api"
+    - "opentelemetry-sdk"
+    - "opentelemetry-exporter-otlp-proto-http"
+predict: "predict.py:Predictor"
+concurrency:
+  max: 4
