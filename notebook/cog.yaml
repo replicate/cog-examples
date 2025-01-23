@@ -2,6 +2,6 @@ build:
   gpu: false
   python_packages:
     - "jupyterlab==3.2.4"
-  python_version: "3.9"
+  python_version: "3.12"
 
 predict: "predict.py:Predictor"
