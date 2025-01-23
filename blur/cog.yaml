@@ -1,5 +1,5 @@
 build:
-  python_version: "3.8"
+  python_version: "3.12"
   python_packages:
     - "pillow==8.2.0"
   system_packages:
