@@ -1,5 +1,5 @@
 build:
-  python_version: "3.8"
+  python_version: "3.12"
   python_packages:
     - "pillow==9.1.0"
     - "tensorflow==2.8.0"
