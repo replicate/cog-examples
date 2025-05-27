@@ -17,7 +17,7 @@ build:
   python_requirements: requirements.txt
 
   # enable fast boots
-  fast: true
+  fast: false
 
   # commands run after the environment is setup
   # run:
