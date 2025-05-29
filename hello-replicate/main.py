@@ -1,8 +1,11 @@
 import tempfile
 import os
-from cog import Input, Path
+import warnings
+from cog import Input, Path, ExperimentalFeatureWarning
 
 from replicate.client import Client
+
+warnings.filterwarnings("ignore", category=ExperimentalFeatureWarning)
 
 
 def run(
