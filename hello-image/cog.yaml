@@ -1,3 +1,4 @@
 build:
-  python_version: "3.12"
+  python_version: "3.13"
+  cog_runtime: true
 predict: "predict.py:Predictor"
