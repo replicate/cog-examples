@@ -20,4 +20,4 @@ class Predictor(BasePredictor):
         preds = self.model(WEIGHTS.transforms()(img).unsqueeze(0).to(self.device))
         top3 = preds[0].softmax(0).topk(3)
         categories = WEIGHTS.meta["categories"]
-        return {categories[i]: float(p) for p, i in zip(*top3)}
+        return {categories[i]: p.detach().item() for p, i in zip(*top3)}
