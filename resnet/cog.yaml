@@ -1,6 +1,4 @@
 build:
   python_version: "3.12"
-  python_packages:
-    - "pillow==9.1.0"
-    - "tensorflow==2.8.0"
+  python_requirements: "requirements.txt"
 predict: "predict.py:Predictor"

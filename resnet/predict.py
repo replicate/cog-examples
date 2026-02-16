@@ -1,29 +1,21 @@
-from typing import Any
+import os
+os.environ["TORCH_HOME"] = "."
 
-import numpy as np
 from cog import BasePredictor, Input, Path
-from tensorflow.keras.applications.resnet50 import (
-    ResNet50,
-    decode_predictions,
-    preprocess_input,
-)
-from tensorflow.keras.preprocessing import image as keras_image
+from PIL import Image
+from torchvision import models
+
+WEIGHTS = models.ResNet50_Weights.IMAGENET1K_V1
 
 
 class Predictor(BasePredictor):
     def setup(self):
-        """Load the model into memory to make running multiple predictions efficient"""
-        self.model = ResNet50(weights="resnet50_weights_tf_dim_ordering_tf_kernels.h5")
+        self.model = models.resnet50(weights=WEIGHTS)
+        self.model.eval()
 
-    # Define the arguments and types the model takes as input
-    def predict(self, image: Path = Input(description="Image to classify")) -> Any:
-        """Run a single prediction on the model"""
-        # Preprocess the image
-        img = keras_image.load_img(image, target_size=(224, 224))
-        x = keras_image.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
-        x = preprocess_input(x)
-        # Run the prediction
-        preds = self.model.predict(x)
-        # Return the top 3 predictions
-        return decode_predictions(preds, top=3)[0]
+    def predict(self, image: Path = Input(description="Image to classify")) -> dict:
+        img = Image.open(image).convert("RGB")
+        preds = self.model(WEIGHTS.transforms()(img).unsqueeze(0))
+        top3 = preds[0].softmax(0).topk(3)
+        categories = WEIGHTS.meta["categories"]
+        return {categories[i]: float(p) for p, i in zip(*top3)}

@@ -2,3 +2,4 @@ blur/output.png
 .cog
 __pycache__
 notebook/.ipynb_checkpoints
+resnet/hub
