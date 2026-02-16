@@ -1,4 +1,5 @@
 build:
+  gpu: true
   python_version: "3.12"
   python_requirements: "requirements.txt"
 predict: "predict.py:Predictor"
