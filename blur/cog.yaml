@@ -1,8 +1,4 @@
 build:
   python_version: "3.12"
-  python_packages:
-    - "pillow==8.2.0"
-  system_packages:
-    - "libpng-dev"
-    - "libjpeg-dev"
+  python_requirements: requirements.txt
 predict: "predict.py:Predictor"
