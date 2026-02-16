@@ -6,14 +6,11 @@ Once you've got a working model and want to publish it so others can see it in a
 
 ## Examples in this repo
 
+- [hello-world](hello-world) - Takes a string as input and returns a string as output. The simplest possible "model".
+- [resnet](resnet) - Classifies images using ResNet. This is a good example of a deep learning model that's small enough to run without a GPU if you need to do that for demos.
+- [z-image-turbo](z-image-turbo) - [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo) image generation model. This is an example of a modern generative model. It requires a GPU, but it's small enough that it's fast to run, so makes for a good demo.
 - [blur](blur) - Applies box blur to an input image
 - [canary](canary) - Takes a string as input and returns a streaming string output
-- [hello-world](hello-world) - Takes a string as input and returns a string as output
 - [notebook](notebook) - Using a Jupyter Notebook with Cog
-- [resnet](resnet) - Classifies images using ResNet
 - [hello-train](hello-train) - Demonstrates Cog's training API for fine-tuning
-- [z-image-turbo](z-image-turbo) - [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo) image generation model
 
-## Support
-
-Having trouble getting a model working? Let us know and we'll help. If you encountered a problem with Cog, you can [file a GitHub issue](https://github.com/replicate/cog/issues). Otherwise [chat with us in Discord](https://discord.gg/replicate) or send us an email at [team@replicate.com](mailto:team@replicate.com).
