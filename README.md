@@ -6,22 +6,13 @@ Once you've got a working model and want to publish it so others can see it in a
 
 ## Examples in this repo
 
-- [blur](blur)
-- [canary](canary)
-- [hello-world](hello-world)
-- [notebook](notebook)
-- [resnet](resnet)
-- [hello-train](hello-train)
-
-## Real world examples
-
-The models in this repo are small and contrived. Here are a few real-world examples:
-
-- https://github.com/andreasjansson/pretrained-gan-70s-scifi
-- https://github.com/minzwon/sota-music-tagging-models
-- https://github.com/orpatashnik/StyleCLIP
-- https://github.com/andreasjansson/InstColorization ([PR](https://github.com/ericsujw/InstColorization/pull/36))
-- https://github.com/andreasjansson/SRResCGAN/tree/cog-config
+- [blur](blur) - Applies box blur to an input image
+- [canary](canary) - Takes a string as input and returns a streaming string output
+- [hello-world](hello-world) - Takes a string as input and returns a string as output
+- [notebook](notebook) - Using a Jupyter Notebook with Cog
+- [resnet](resnet) - Classifies images using ResNet
+- [hello-train](hello-train) - Demonstrates Cog's training API for fine-tuning
+- [z-image-turbo](z-image-turbo) - [Z-Image-Turbo](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo) image generation model
 
 ## Support
 

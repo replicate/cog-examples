@@ -16,13 +16,7 @@ Download the pre-trained weights:
 curl -O https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet50_weights_tf_dim_ordering_tf_kernels.h5
 ```
 
-Build the image:
-
-```sh
-cog build
-```
-
-Now you can run predictions on the model:
+Run predictions on the model:
 
 ```sh
 cog predict -i image=@cat.png

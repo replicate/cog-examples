@@ -6,12 +6,6 @@ A simple example using a Jupyter Notebook with Cog
 
 First, make sure you've got the [latest version of Cog](https://github.com/replicate/cog#install) installed.
 
-Build the image:
-
-```sh
-cog build
-```
-
 Run the Jupyter Notebook server with Cog:
 
 ```sh
