@@ -3,3 +3,73 @@ build:
     python_version: "3.13"
     python_requirements: "requirements.txt"
 predict: "predict.py:Predictor"
+
+weights:
+  # Root config
+  - name: z-image-turbo-model-index
+    source: weights/model_index.json
+    target: /src/weights/model_index.json
+
+  # Scheduler
+  - name: z-image-turbo-scheduler-config
+    source: weights/scheduler/scheduler_config.json
+    target: /src/weights/scheduler/scheduler_config.json
+
+  # Text encoder
+  - name: z-image-turbo-text-encoder-config
+    source: weights/text_encoder/config.json
+    target: /src/weights/text_encoder/config.json
+  - name: z-image-turbo-text-encoder-generation-config
+    source: weights/text_encoder/generation_config.json
+    target: /src/weights/text_encoder/generation_config.json
+  - name: z-image-turbo-text-encoder-model-1
+    source: weights/text_encoder/model-00001-of-00003.safetensors
+    target: /src/weights/text_encoder/model-00001-of-00003.safetensors
+  - name: z-image-turbo-text-encoder-model-2
+    source: weights/text_encoder/model-00002-of-00003.safetensors
+    target: /src/weights/text_encoder/model-00002-of-00003.safetensors
+  - name: z-image-turbo-text-encoder-model-3
+    source: weights/text_encoder/model-00003-of-00003.safetensors
+    target: /src/weights/text_encoder/model-00003-of-00003.safetensors
+  - name: z-image-turbo-text-encoder-index
+    source: weights/text_encoder/model.safetensors.index.json
+    target: /src/weights/text_encoder/model.safetensors.index.json
+
+  # Tokenizer
+  - name: z-image-turbo-tokenizer-merges
+    source: weights/tokenizer/merges.txt
+    target: /src/weights/tokenizer/merges.txt
+  - name: z-image-turbo-tokenizer-json
+    source: weights/tokenizer/tokenizer.json
+    target: /src/weights/tokenizer/tokenizer.json
+  - name: z-image-turbo-tokenizer-config
+    source: weights/tokenizer/tokenizer_config.json
+    target: /src/weights/tokenizer/tokenizer_config.json
+  - name: z-image-turbo-tokenizer-vocab
+    source: weights/tokenizer/vocab.json
+    target: /src/weights/tokenizer/vocab.json
+
+  # Transformer (DiT)
+  - name: z-image-turbo-transformer-config
+    source: weights/transformer/config.json
+    target: /src/weights/transformer/config.json
+  - name: z-image-turbo-transformer-model-1
+    source: weights/transformer/diffusion_pytorch_model-00001-of-00003.safetensors
+    target: /src/weights/transformer/diffusion_pytorch_model-00001-of-00003.safetensors
+  - name: z-image-turbo-transformer-model-2
+    source: weights/transformer/diffusion_pytorch_model-00002-of-00003.safetensors
+    target: /src/weights/transformer/diffusion_pytorch_model-00002-of-00003.safetensors
+  - name: z-image-turbo-transformer-model-3
+    source: weights/transformer/diffusion_pytorch_model-00003-of-00003.safetensors
+    target: /src/weights/transformer/diffusion_pytorch_model-00003-of-00003.safetensors
+  - name: z-image-turbo-transformer-index
+    source: weights/transformer/diffusion_pytorch_model.safetensors.index.json
+    target: /src/weights/transformer/diffusion_pytorch_model.safetensors.index.json
+
+  # VAE
+  - name: z-image-turbo-vae-config
+    source: weights/vae/config.json
+    target: /src/weights/vae/config.json
+  - name: z-image-turbo-vae-model
+    source: weights/vae/diffusion_pytorch_model.safetensors
+    target: /src/weights/vae/diffusion_pytorch_model.safetensors

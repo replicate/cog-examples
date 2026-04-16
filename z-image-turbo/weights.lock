@@ -1,0 +1,177 @@
+{
+  "version": "1.0",
+  "created": "2026-04-15T17:27:07.822032Z",
+  "files": [
+    {
+      "name": "z-image-turbo-model-index",
+      "dest": "/src/weights/model_index.json",
+      "digestOriginal": "sha256:18a90e1bc117a29a8b7961bb200c86ff0b9704609e87c7171511dc724fcdc9d3",
+      "digest": "sha256:18a90e1bc117a29a8b7961bb200c86ff0b9704609e87c7171511dc724fcdc9d3",
+      "size": 467,
+      "sizeUncompressed": 467,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-scheduler-config",
+      "dest": "/src/weights/scheduler/scheduler_config.json",
+      "digestOriginal": "sha256:3b979ab0956e4f5e8d02ec409ac6a4ece1555191d15bd10788fdc85fea5d13fc",
+      "digest": "sha256:3b979ab0956e4f5e8d02ec409ac6a4ece1555191d15bd10788fdc85fea5d13fc",
+      "size": 173,
+      "sizeUncompressed": 173,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-text-encoder-config",
+      "dest": "/src/weights/text_encoder/config.json",
+      "digestOriginal": "sha256:8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "digest": "sha256:8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "size": 726,
+      "sizeUncompressed": 726,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-text-encoder-generation-config",
+      "dest": "/src/weights/text_encoder/generation_config.json",
+      "digestOriginal": "sha256:2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "digest": "sha256:2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "size": 239,
+      "sizeUncompressed": 239,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-text-encoder-model-1",
+      "dest": "/src/weights/text_encoder/model-00001-of-00003.safetensors",
+      "digestOriginal": "sha256:328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+      "digest": "sha256:328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+      "size": 3957900840,
+      "sizeUncompressed": 3957900840,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-text-encoder-model-2",
+      "dest": "/src/weights/text_encoder/model-00002-of-00003.safetensors",
+      "digestOriginal": "sha256:6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+      "digest": "sha256:6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+      "size": 3987450520,
+      "sizeUncompressed": 3987450520,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-text-encoder-model-3",
+      "dest": "/src/weights/text_encoder/model-00003-of-00003.safetensors",
+      "digestOriginal": "sha256:7ca841ee75b9c61267c0c6148fd8d096d3d21b6d3e161256a9b878154f91fc52",
+      "digest": "sha256:7ca841ee75b9c61267c0c6148fd8d096d3d21b6d3e161256a9b878154f91fc52",
+      "size": 99630640,
+      "sizeUncompressed": 99630640,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-text-encoder-index",
+      "dest": "/src/weights/text_encoder/model.safetensors.index.json",
+      "digestOriginal": "sha256:6dc0981b8829fead746441f68f38f24c5ca4a3a66351f652c26c6df0efc43ab2",
+      "digest": "sha256:6dc0981b8829fead746441f68f38f24c5ca4a3a66351f652c26c6df0efc43ab2",
+      "size": 32819,
+      "sizeUncompressed": 32819,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-tokenizer-merges",
+      "dest": "/src/weights/tokenizer/merges.txt",
+      "digestOriginal": "sha256:8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "digest": "sha256:8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "size": 1671853,
+      "sizeUncompressed": 1671853,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-tokenizer-json",
+      "dest": "/src/weights/tokenizer/tokenizer.json",
+      "digestOriginal": "sha256:aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "digest": "sha256:aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "size": 11422654,
+      "sizeUncompressed": 11422654,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-tokenizer-config",
+      "dest": "/src/weights/tokenizer/tokenizer_config.json",
+      "digestOriginal": "sha256:d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "digest": "sha256:d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "size": 9732,
+      "sizeUncompressed": 9732,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-tokenizer-vocab",
+      "dest": "/src/weights/tokenizer/vocab.json",
+      "digestOriginal": "sha256:ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "digest": "sha256:ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "size": 2776833,
+      "sizeUncompressed": 2776833,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-transformer-config",
+      "dest": "/src/weights/transformer/config.json",
+      "digestOriginal": "sha256:06d49d1ae533f825c4704cc616fc8bc7826e9d449dde292cc7a95163c69af24a",
+      "digest": "sha256:06d49d1ae533f825c4704cc616fc8bc7826e9d449dde292cc7a95163c69af24a",
+      "size": 473,
+      "sizeUncompressed": 473,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-transformer-model-1",
+      "dest": "/src/weights/transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+      "digestOriginal": "sha256:95facd593e2549e8252acb571c653d57f7ddb7f1060d4e81712f152555a88804",
+      "digest": "sha256:95facd593e2549e8252acb571c653d57f7ddb7f1060d4e81712f152555a88804",
+      "size": 9973693184,
+      "sizeUncompressed": 9973693184,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-transformer-model-2",
+      "dest": "/src/weights/transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+      "digestOriginal": "sha256:a4bbe43ee184a1fb5af4b412d27555f532893bdc3165b1149e304ed82b5d7015",
+      "digest": "sha256:a4bbe43ee184a1fb5af4b412d27555f532893bdc3165b1149e304ed82b5d7015",
+      "size": 9973714824,
+      "sizeUncompressed": 9973714824,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-transformer-model-3",
+      "dest": "/src/weights/transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+      "digestOriginal": "sha256:aba4e37a590e63210878160a718d916d80398f4e1f78ab6c9b2b2a00d92769fa",
+      "digest": "sha256:aba4e37a590e63210878160a718d916d80398f4e1f78ab6c9b2b2a00d92769fa",
+      "size": 4672282880,
+      "sizeUncompressed": 4672282880,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-transformer-index",
+      "dest": "/src/weights/transformer/diffusion_pytorch_model.safetensors.index.json",
+      "digestOriginal": "sha256:182a119d8018bfc61c9a62685a384af3b7d4a2f8aabbe766e07c9e1eda5b97ab",
+      "digest": "sha256:182a119d8018bfc61c9a62685a384af3b7d4a2f8aabbe766e07c9e1eda5b97ab",
+      "size": 48969,
+      "sizeUncompressed": 48969,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-vae-config",
+      "dest": "/src/weights/vae/config.json",
+      "digestOriginal": "sha256:e80af1e64a71883a9d10c3159d2e493e5934508da57852f6a180ae6ae63b14bd",
+      "digest": "sha256:e80af1e64a71883a9d10c3159d2e493e5934508da57852f6a180ae6ae63b14bd",
+      "size": 805,
+      "sizeUncompressed": 805,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    },
+    {
+      "name": "z-image-turbo-vae-model",
+      "dest": "/src/weights/vae/diffusion_pytorch_model.safetensors",
+      "digestOriginal": "sha256:f5b59a26851551b67ae1fe58d32e76486e1e812def4696a4bea97f16604d40a3",
+      "digest": "sha256:f5b59a26851551b67ae1fe58d32e76486e1e812def4696a4bea97f16604d40a3",
+      "size": 167666902,
+      "sizeUncompressed": 167666902,
+      "mediaType": "application/vnd.cog.weight.layer.v1"
+    }
+  ]
+}

@@ -3,3 +3,4 @@ blur/output.png
 __pycache__
 notebook/.ipynb_checkpoints
 resnet/hub
+.ruff_cache
