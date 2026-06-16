@@ -1,5 +1,7 @@
 # Cog example models
 
+> **Archived:** This repository is archived. All examples have been moved to [`replicate/cog`](https://github.com/replicate/cog/tree/main/examples).
+
 This repo contains example machine learning models you can use to try out [Cog](https://github.com/replicate/cog).
 
 Once you've got a working model and want to publish it so others can see it in action, check out [replicate.com/docs](https://replicate.com/docs).
@@ -13,4 +15,3 @@ Once you've got a working model and want to publish it so others can see it in a
 - [canary](canary) - Takes a string as input and returns a streaming string output
 - [notebook](notebook) - Using a Jupyter Notebook with Cog
 - [hello-train](hello-train) - Demonstrates Cog's training API for fine-tuning
-
